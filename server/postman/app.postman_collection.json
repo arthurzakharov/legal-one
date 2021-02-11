@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "9b2bff6f-8f73-4109-9d34-15f793282e61",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get agent by ID incorrect",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/agent/8273f480-a28b-11e7-b106-e7aa9bbee08e000",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"agent",
+						"8273f480-a28b-11e7-b106-e7aa9bbee08e000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get agent by ID correct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/agent/8273f480-a28b-11e7-b106-e7aa9bbee08e",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"agent",
+						"8273f480-a28b-11e7-b106-e7aa9bbee08e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get phone by Number correct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/call/49158544147",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"call",
+						"49158544147"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get phone by Number incorrect",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/call/4915854414789",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"call",
+						"4915854414789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get general report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/404",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"404"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
