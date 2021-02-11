@@ -5,7 +5,7 @@ const groupLogsByPhone = require('../utils/groupLogsByPhone');
 const updateDataWithField = require('../utils/updateDataWithField');
 const updateDataWithUuid = require('../utils/updateDataWithUuid');
 
-exports.getGeneralReport = (req, res) => {
+exports.getBase = (req, res) => {
   /**
    * Basically logic above is the replace of for example Mongo aggregation pipelines on different collections
    * or some join tables from some sequel DBs. Sort can also be done on frontend. But we can save 1 request here
@@ -21,8 +21,9 @@ exports.getGeneralReport = (req, res) => {
       }
       const groupedByPhone = groupLogsByPhone(dataLog);
       const formattedData = updateDataWithField(
-        {dataRawSource: groupedByPhone, dataRawKey: 'agent'},
-        {dataToAddSource: dataAgent, dataToAddKey: 'identifier'}
+        {dataRawSource: groupedByPhone, dataRawKey: 'identifier'},
+        {dataToAddSource: dataAgent, dataToAddKey: 'agent'},
+        'agent'
       );
       if (formattedData) {
         return res.status(200).json(formatResponse('General report', updateDataWithUuid(formattedData)));

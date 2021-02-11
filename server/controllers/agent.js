@@ -21,14 +21,19 @@ exports.getAgentById = (req, res) => {
       const dataFilteredByAgent = dataLogs.filter(
         (dataLog) => dataLog.agentIdentifier.toString() === agentIdentifier.toString()
       );
-      const formattedData = updateDataWithField(
-        {dataRawSource: dataFilteredByAgent, dataRawKey: 'identifier'},
-        {dataToAddSource: dataResolution, dataToAddKey: 'identifier'}
-      );
-      if (formattedData.length) {
-        return res.status(200).json(formatResponse(`Agent ${agentIdentifier} report`, formattedData));
+      if (dataFilteredByAgent.length) {
+        const formattedData = updateDataWithField(
+          {dataRawSource: dataFilteredByAgent, dataRawKey: 'identifier'},
+          {dataToAddSource: dataResolution, dataToAddKey: 'identifier'},
+          'resolution'
+        );
+        if (formattedData) {
+          return res.status(200).json(formatResponse(`Agent ${agentIdentifier} report`, formattedData));
+        } else {
+          return res.status(404).json(formatResponse('By resolution not found', null));
+        }
       } else {
-        return res.status(404).json(formatResponse('Some agent or resolution ID not found', null));
+        return res.status(404).json(formatResponse(`By agent ${agentIdentifier} not found`, null));
       }
     });
   });

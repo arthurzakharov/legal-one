@@ -1,8 +1,8 @@
-module.exports = ({dataRawSource, dataRawKey}, {dataToAddSource, dataToAddKey}) => {
+module.exports = ({dataRawSource, dataRawKey}, {dataToAddSource, dataToAddKey}, keyName) => {
   const data = dataRawSource.map((dataRaw) => {
-    const item = dataToAddSource.find((dataToAdd) => dataToAdd[dataRawKey] === dataRaw[dataToAddKey]);
+    const item = dataToAddSource.find((dataToAdd) => dataToAdd[dataToAddKey] === dataRaw[dataRawKey]);
     if (item) {
-      return {...dataRaw, item};
+      return Object.assign(dataRaw, {[keyName]: item});
     } else {
       return null;
     }
