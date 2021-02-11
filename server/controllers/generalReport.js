@@ -2,7 +2,7 @@ const pathToFile = require('../utils/pathToFile');
 const readJson = require('../utils/readJson');
 const formatResponse = require('../utils/formatResponse');
 const groupLogsByPhone = require('../utils/groupLogsByPhone');
-const updateRawReportAgentInfo = require('../utils/updateRawReportAgentInfo');
+const updateDataWithField = require('../utils/updateDataWithField');
 const updateDataWithUuid = require('../utils/updateDataWithUuid');
 
 exports.getGeneralReport = (req, res) => {
@@ -20,11 +20,14 @@ exports.getGeneralReport = (req, res) => {
         return res.status(500).json(formatResponse('Agents file read failure', errAgent));
       }
       const groupedByPhone = groupLogsByPhone(dataLog);
-      const formattedData = updateRawReportAgentInfo(groupedByPhone, dataAgent);
+      const formattedData = updateDataWithField(
+        {dataRawSource: groupedByPhone, dataRawKey: 'agent'},
+        {dataToAddSource: dataAgent, dataToAddKey: 'identifier'}
+      );
       if (formattedData) {
         return res.status(200).json(formatResponse('General report', updateDataWithUuid(formattedData)));
       } else {
-        return res.status(404).json(formatResponse('Some agent ID not found', null));
+        return res.status(404).json(formatResponse('Some agent or log ID not found', null));
       }
     });
   });
