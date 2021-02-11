@@ -1,13 +1,11 @@
 const fs = require('fs');
 
-const readJson = (path, cb) => {
+module.exports = (path, cb) => {
   fs.readFile(path, 'utf8', (err, data) => {
     if (err) {
       cb(err, null);
     } else {
-      cb(null, data);
+      cb(null, JSON.parse(data));
     }
   });
 };
-
-module.exports = readJson;
