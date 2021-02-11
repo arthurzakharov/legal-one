@@ -17,7 +17,7 @@ export const API = axios.create({
 API.interceptors.response.use(
   (config) => ({
     status: config.status,
-    data: config.data,
+    data: config.data.payload,
   }),
   (error) => Promise.reject(error)
 );

@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+.ReportTableRow {
+  border-bottom: 1px solid $color-grey-dark-3;
+}
+
+.ReportTableCell {
+  padding: 1.2rem 1.6rem;
+  border-right: 1px solid $color-grey-dark-3;
+  &:first-of-type {
+    border-left: 1px solid $color-grey-dark-3;
+  }
+}
