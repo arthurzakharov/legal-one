@@ -11,12 +11,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/agent/8273f480-a28b-11e7-b106-e7aa9bbee08e000",
+					"raw": "localhost:5000/api/agent/8273f480-a28b-11e7-b106-e7aa9bbee08e000",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
+						"api",
 						"agent",
 						"8273f480-a28b-11e7-b106-e7aa9bbee08e000"
 					]
@@ -30,12 +31,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/agent/8273f480-a28b-11e7-b106-e7aa9bbee08e",
+					"raw": "localhost:5000/api/agent/8273f480-a28b-11e7-b106-e7aa9bbee08e",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
+						"api",
 						"agent",
 						"8273f480-a28b-11e7-b106-e7aa9bbee08e"
 					]
@@ -49,12 +51,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/call/49158544147",
+					"raw": "localhost:5000/api/call/49158544147",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
+						"api",
 						"call",
 						"49158544147"
 					]
@@ -68,12 +71,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/call/4915854414789",
+					"raw": "localhost:5000/api/call/4915854414789",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
+						"api",
 						"call",
 						"4915854414789"
 					]
@@ -87,11 +91,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000",
+					"raw": "localhost:5000/api",
 					"host": [
 						"localhost"
 					],
-					"port": "5000"
+					"port": "5000",
+					"path": [
+						"api"
+					]
 				}
 			},
 			"response": []
@@ -114,6 +121,5 @@
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

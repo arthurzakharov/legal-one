@@ -11,9 +11,9 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use('/agent', agentRoutes);
-app.use('/call', callRoutes);
-app.use('/', baseRoutes);
+app.use('/api/agent', agentRoutes);
+app.use('/api/call', callRoutes);
+app.use('/api', baseRoutes);
 app.use(notFoundController.get404);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
