@@ -3,6 +3,7 @@ const readJson = require('../utils/readJson');
 const formatResponse = require('../utils/formatResponse');
 const groupLogsByPhone = require('../utils/groupLogsByPhone');
 const updateRawReportAgentInfo = require('../utils/updateRawReportAgentInfo');
+const updateDataWithUuid = require('../utils/updateDataWithUuid');
 
 exports.getGeneralReport = (req, res) => {
   /**
@@ -21,7 +22,7 @@ exports.getGeneralReport = (req, res) => {
       const groupedByPhone = groupLogsByPhone(dataLog);
       const formattedData = updateRawReportAgentInfo(groupedByPhone, dataAgent);
       if (formattedData) {
-        return res.status(200).json(formatResponse('General report', formattedData));
+        return res.status(200).json(formatResponse('General report', updateDataWithUuid(formattedData)));
       } else {
         return res.status(404).json(formatResponse('Some agent ID not found', null));
       }

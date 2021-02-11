@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/agent', agentRoutes);
-app.use('/general-report', generalReportRoutes);
+app.use('/', generalReportRoutes);
 
 app.get('/', (req, res) => {
   res.status(200).send('OK');

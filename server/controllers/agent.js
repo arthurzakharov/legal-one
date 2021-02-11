@@ -12,7 +12,6 @@ exports.getAllAgents = (req, res) => {
 };
 
 exports.getAgentById = (req, res) => {
-  console.log(req.params.id);
   const agentId = req.params.id;
   readJson(pathToFile.agent, (err, data) => {
     if (err) {
