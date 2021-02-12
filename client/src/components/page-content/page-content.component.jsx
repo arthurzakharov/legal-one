@@ -5,7 +5,7 @@ import styles from './page-content.module.scss';
 const PageContent = ({children}) => <div className={styles.PageContent}>{children}</div>;
 
 PageContent.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
 };
 
 export default PageContent;
