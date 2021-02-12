@@ -22,7 +22,8 @@
   "author": "tariq.hassan@legal.one",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Legal-One/coding-challenge-frontend/issues"
+    "url": "https://github.com/Legal-One/coding-challenge-frontend/issues",
+    "demo": "https://legal-one.herokuapp.com/"
   },
   "homepage": "https://github.com/Legal-One/coding-challenge-frontend#readme",
   "dependencies": {
