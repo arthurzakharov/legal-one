@@ -16,17 +16,25 @@ const DataTable = ({columns, data}) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((item) => (
-          <tr key={item.id} className={styles.DataTableBodyRow}>
-            {columns
-              .map((c) => c.id)
-              .map((key) => (
-                <td key={key} className={styles.DataTableBodyCell}>
-                  <div>{componentHandler(item[key])}</div>
-                </td>
-              ))}
+        {data.length ? (
+          data.map((item) => (
+            <tr key={item.id} className={styles.DataTableBodyRow}>
+              {columns
+                .map((c) => c.id)
+                .map((key) => (
+                  <td key={key} className={styles.DataTableBodyCell}>
+                    <div>{componentHandler(item[key])}</div>
+                  </td>
+                ))}
+            </tr>
+          ))
+        ) : (
+          <tr className={styles.DataTableBodyRow}>
+            <td className={styles.DataTableBodyCellNoData} colSpan={columns.length}>
+              No data
+            </td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );
