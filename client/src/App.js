@@ -4,6 +4,7 @@ import CallPage from './pages/call/call.page';
 import AgentPage from './pages/agent/agent.page';
 import HomePage from './pages/home/home.page';
 import Header from './components/header/header.component';
+import AgentListPage from './pages/agent-list/agent-list.page';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <main>
         <Switch>
           <Route path="/call/:phone" component={CallPage} />
+          <Route path="/agent" component={AgentListPage} />
           <Route path="/agent/:id" component={AgentPage} />
           <Route path="/" component={HomePage} />
         </Switch>

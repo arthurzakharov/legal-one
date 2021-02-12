@@ -9,10 +9,7 @@ const Header = () => (
         <Link to={'/'}>General report</Link>
       </li>
       <li className={styles.HeaderListItem}>
-        <Link to={'/'}>General report</Link>
-      </li>
-      <li className={styles.HeaderListItem}>
-        <Link to={'/'}>General report</Link>
+        <Link to={'/agent'}>Agents list</Link>
       </li>
     </ul>
   </header>
