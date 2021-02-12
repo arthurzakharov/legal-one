@@ -8,7 +8,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/call/:id">
+        <Route path="/call/:phone">
           <CallPage />
         </Route>
         <Route path="/agent/:id">

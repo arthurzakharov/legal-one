@@ -1,9 +1,10 @@
 import React from 'react';
+import CallTable from '../../components/call-table/call-table.component';
 
 const CallPage = () => {
   return (
     <div>
-      <p>Call page</p>
+      <CallTable />
     </div>
   );
 };
