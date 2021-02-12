@@ -5,3 +5,16 @@ export const formatDate = (date) => {
 };
 
 export const componentHandler = (data) => (typeof data === 'function' ? data() : data);
+
+export const getPageTitle = (path) => {
+  switch (path) {
+    case '/':
+      return 'General report';
+    case '/agent':
+      return 'Agents list';
+    case path.includes('/call/49151484522'):
+      return 'Calls';
+    default:
+      return null;
+  }
+};
