@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageContent:  render 1`] = `
+<div
+  className="PageContent"
+>
+  <p>
+    x
+  </p>
+</div>
+`;

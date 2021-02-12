@@ -1,4 +1,10 @@
-export const getAgentName = (firstName, lastName) => `${firstName} ${lastName}`;
+export const getAgentName = (firstName, lastName) => {
+  if (firstName && lastName) {
+    return `${firstName} ${lastName}`;
+  } else {
+    return firstName || lastName;
+  }
+};
 
 export const formatDate = (date) => {
   return new Date(date).toLocaleString('en-US');

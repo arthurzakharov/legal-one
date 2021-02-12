@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header:  render 1`] = `
+<header
+  className="Header"
+>
+  <ul
+    className="HeaderList"
+  >
+    <li
+      className="HeaderListItem"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        General report
+      </a>
+    </li>
+    <li
+      className="HeaderListItem"
+    >
+      <a
+        href="/agent"
+        onClick={[Function]}
+      >
+        Agents list
+      </a>
+    </li>
+  </ul>
+</header>
+`;

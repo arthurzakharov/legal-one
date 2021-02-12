@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AgentLogo:  render with all props passed 1`] = `
+<img
+  alt="Logo-x"
+  className="AgentLogo"
+  src="x"
+/>
+`;
+
+exports[`AgentLogo:  render with no props passed 1`] = `
+<img
+  alt="Logo-undefined"
+  className="AgentLogo"
+/>
+`;

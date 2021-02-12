@@ -12,12 +12,11 @@ const AgentLook = ({firstName, lastName, photo, identifier, onClick}) => (
 );
 
 AgentLook.propTypes = {
-  identifier: PropTypes.string,
-  firstName: PropTypes.string,
-  lastName: PropTypes.string,
-  email: PropTypes.string,
-  photo: PropTypes.string,
-  onClick: PropTypes.func,
+  identifier: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default AgentLook;

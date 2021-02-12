@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTitle:  render with passed prop 1`] = `
+<div
+  className="PageTitle"
+>
+  x
+</div>
+`;
+
+exports[`PageTitle:  render without passed prop 1`] = `
+<div
+  className="PageTitle"
+/>
+`;

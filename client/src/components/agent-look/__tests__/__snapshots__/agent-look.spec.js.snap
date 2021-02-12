@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AgentLook:  render with all props passed 1`] = `
+<div
+  className="AgentLook"
+  onClick={[Function]}
+>
+  <img
+    alt="Logo-x"
+    className="AgentLogo"
+    src="x"
+  />
+  <h6>
+    x x
+  </h6>
+</div>
+`;
