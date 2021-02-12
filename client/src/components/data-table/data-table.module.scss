@@ -6,12 +6,13 @@
 }
 
 .DataTableHeaderRow {
-  border-bottom: 1px solid $color-grey-dark-3;
+  border-bottom: 2px solid $color-grey-dark-3;
   border-top: 1px solid $color-grey-dark-3;
+  background-color: rgba($color-primary-light, 0.4);
 }
 
 .DataTableHeaderCell {
-  padding: 1.2rem 1.6rem;
+  padding: 2rem 1.6rem;
   text-align: left;
   border-right: 1px solid $color-grey-dark-3;
   &:first-of-type {
@@ -21,10 +22,17 @@
 
 .DataTableBodyRow {
   border-bottom: 1px solid $color-grey-dark-3;
+  transition: background-color 350ms ease-in-out;
+  &:nth-last-of-type(even) {
+    background-color: rgba($color-primary-light, 0.1);
+  }
+  &:hover {
+    background-color: rgba($color-primary-dark, 0.3);
+  }
 }
 
 .DataTableBodyCell {
-  padding: 1.2rem 1.6rem;
+  padding: 0.8rem 1.6rem;
   border-right: 1px solid $color-grey-dark-3;
   vertical-align: middle;
   &:first-of-type {
