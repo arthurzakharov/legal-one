@@ -5,7 +5,7 @@ import DataTable from '../data-table/data-table.component';
 import {formatDate} from '../../utils';
 import AgentLook from '../agent-look/agent-look';
 
-const ReportTable = () => {
+const HomeTable = () => {
   const [tableData, setTableData] = useState([]);
   const history = useHistory();
   useEffect(() => {
@@ -54,4 +54,4 @@ const ReportTable = () => {
   return <DataTable columns={tableColumns} data={tableData} />;
 };
 
-export default ReportTable;
+export default HomeTable;

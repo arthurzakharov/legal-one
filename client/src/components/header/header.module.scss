@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+.Header {
+  background-color: $color-primary-light;
+  padding: 2rem 1.6rem;
+}
+
+.HeaderList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.HeaderListItem {
+  margin-right: 1.6rem;
+  & a {
+    display: block;
+    padding: 0.4rem 0.8rem;
+    color: $color-grey-light-1;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      transform: translate(1px, 1px);
+      color: $color-grey-light-1;
+    }
+  }
+}
