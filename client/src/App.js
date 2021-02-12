@@ -13,8 +13,8 @@ const App = () => {
       <main>
         <Switch>
           <Route path="/call/:phone" component={CallPage} />
-          <Route path="/agent" component={AgentListPage} />
           <Route path="/agent/:id" component={AgentPage} />
+          <Route path="/agent" component={AgentListPage} />
           <Route path="/" component={HomePage} />
         </Switch>
       </main>
