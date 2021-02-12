@@ -1,19 +1,32 @@
 @import "../../styles/variables";
 
-.ReportTable {
+.DataTable {
   width: 100%;
   table-layout: fixed;
 }
 
-.ReportTableHeaderRow {
+.DataTableHeaderRow {
   border-bottom: 1px solid $color-grey-dark-3;
   border-top: 1px solid $color-grey-dark-3;
 }
 
-.ReportTableHeaderCell {
+.DataTableHeaderCell {
   padding: 1.2rem 1.6rem;
   text-align: left;
   border-right: 1px solid $color-grey-dark-3;
+  &:first-of-type {
+    border-left: 1px solid $color-grey-dark-3;
+  }
+}
+
+.DataTableBodyRow {
+  border-bottom: 1px solid $color-grey-dark-3;
+}
+
+.DataTableBodyCell {
+  padding: 1.2rem 1.6rem;
+  border-right: 1px solid $color-grey-dark-3;
+  vertical-align: middle;
   &:first-of-type {
     border-left: 1px solid $color-grey-dark-3;
   }

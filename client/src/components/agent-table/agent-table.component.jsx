@@ -1,25 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import {API} from '../../axios';
-import {useHistory} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import DataTable from '../data-table/data-table.component';
 import {formatDate} from '../../utils';
-import AgentLook from '../agent-look/agent-look';
 
-const ReportTable = () => {
+const AgentTable = () => {
   const [tableData, setTableData] = useState([]);
-  const history = useHistory();
+  const {id} = useParams();
+
   useEffect(() => {
     (async function loadReport() {
       try {
-        const {data, status} = await API.get('/');
+        const {data, status} = await API.get(`/agent/${id}`);
         if (status === 200) {
           setTableData(
             data.reduce((arr, item) => {
               arr.push({
                 number: item.number,
-                callsCount: item.callsCount,
-                lastCallTime: formatDate(item.lastCallTime),
-                agent: () => <AgentLook {...item.agent} onClick={(id) => history.push(`/agent/${id}`)} />,
+                dateTime: formatDate(item.dateTime),
+                resolution: item.resolution.resolution,
                 id: item.identifier,
               });
               return arr;
@@ -38,20 +37,16 @@ const ReportTable = () => {
       id: 'number',
     },
     {
-      title: 'Number of calls',
-      id: 'callsCount',
+      title: 'Call time',
+      id: 'dateTime',
     },
     {
-      title: 'Last call time',
-      id: 'lastCallTime',
-    },
-    {
-      title: 'Agent',
-      id: 'agent',
+      title: 'Resolution',
+      id: 'resolution',
     },
   ];
 
   return <DataTable columns={tableColumns} data={tableData} />;
 };
 
-export default ReportTable;
+export default AgentTable;
