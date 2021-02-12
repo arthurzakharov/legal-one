@@ -31,7 +31,26 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/agent/8273f480-a28b-11e7-b106-e7aa9bbee08e",
+					"raw": "localhost:5000/api/agent",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"agent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all agent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/agent/6fe55f02-a8f3-11e7-b037-c33c31bca71f",
 					"host": [
 						"localhost"
 					],
@@ -39,7 +58,7 @@
 					"path": [
 						"api",
 						"agent",
-						"8273f480-a28b-11e7-b106-e7aa9bbee08e"
+						"6fe55f02-a8f3-11e7-b037-c33c31bca71f"
 					]
 				}
 			},
@@ -51,7 +70,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/call/49158544147",
+					"raw": "localhost:5000/api/call/49221514231",
 					"host": [
 						"localhost"
 					],
@@ -59,7 +78,7 @@
 					"path": [
 						"api",
 						"call",
-						"49158544147"
+						"49221514231"
 					]
 				}
 			},

@@ -3,6 +3,15 @@ const readJson = require('../utils/readJson');
 const formatResponse = require('../utils/formatResponse');
 const updateDataWithField = require('../utils/updateDataWithField');
 
+exports.getAllAgents = (req, res) => {
+  readJson(pathToFile.agent, (errAgent, dataAgent) => {
+    if (errAgent) {
+      return res.status(500).json(formatResponse('Agents file read failure', errAgent));
+    }
+    return res.status(200).json(formatResponse('Agents list', dataAgent));
+  });
+};
+
 exports.getAgentById = (req, res) => {
   /**
    * Basically logic above is the replace of for example Mongo aggregation pipelines on different collections
