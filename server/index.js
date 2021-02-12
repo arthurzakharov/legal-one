@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const baseRoutes = require('./routes/base');
 const agentRoutes = require('./routes/agent');
@@ -15,5 +16,12 @@ app.use('/api/agent', agentRoutes);
 app.use('/api/call', callRoutes);
 app.use('/api', baseRoutes);
 app.use(notFoundController.get404);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
