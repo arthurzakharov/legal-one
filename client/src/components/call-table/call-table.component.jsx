@@ -8,7 +8,7 @@ import AgentLook from '../agent-look/agent-look';
 const CallTable = () => {
   const [tableData, setTableData] = useState([]);
   const {phone} = useParams();
-  const {history} = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     (async function loadReport() {
@@ -18,7 +18,7 @@ const CallTable = () => {
           setTableData(
             data.reduce((arr, item) => {
               arr.push({
-                agent: () => <AgentLook {...item.agent} onClick={(id) => history.push(`/agent/call/${id}`)} />,
+                agent: () => <AgentLook {...item.agent} onClick={(id) => history.push(`/agent/${id}`)} />,
                 dateTime: formatDate(item.dateTime),
                 resolution: item.resolution.resolution,
                 id: item.identifier,
