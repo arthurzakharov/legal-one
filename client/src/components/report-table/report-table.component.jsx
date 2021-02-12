@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {API} from '../../axios';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import DataTable from '../data-table/data-table.component';
 import {formatDate} from '../../utils';
 import AgentLook from '../agent-look/agent-look';
@@ -16,7 +16,7 @@ const ReportTable = () => {
           setTableData(
             data.reduce((arr, item) => {
               arr.push({
-                number: item.number,
+                number: () => <Link to={`/call/${item.number.substring(1)}`}>{item.number}</Link>,
                 callsCount: item.callsCount,
                 lastCallTime: formatDate(item.lastCallTime),
                 agent: () => <AgentLook {...item.agent} onClick={(id) => history.push(`/agent/${id}`)} />,

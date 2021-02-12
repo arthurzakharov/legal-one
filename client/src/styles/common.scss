@@ -36,3 +36,11 @@ body {
   line-height: 1.25;
   color: black;
 }
+
+a {
+  color: $color-black;
+  text-decoration: underline;
+  &:hover {
+    color: $color-tertiary-dark;
+  }
+}
